@@ -1,0 +1,15 @@
+{
+  "name": "avilonfrontend",
+  "version": "1.0.0",
+  "description": "theillfree",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d Avilon"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://beupyTech.github.io/avilon",
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  }
+}
