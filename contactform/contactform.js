@@ -16,7 +16,7 @@ var serverRequest = function(url, data){
     xhr.onload = function() {
         if(xhr.status === 200){
             console.log(url);
-            if(url === "http://theillfree2019.openode.io/orders"){
+            if(url === "https://theillfree2019.openode.io/orders"){
                 createFunction('./view/finale.html', mainContainer, '');
             }else{
                 var deliverData = JSON.parse(this.response);
@@ -43,7 +43,7 @@ var createXmlhttp = function(method, pName, callback) {
   xhttp.send();
 };
 
-createXmlhttp("GET", "http://theillfree2019.openode.io/ping", function(){
+createXmlhttp("GET", "https://theillfree2019.openode.io/ping", function(){
     console.log(this.response);
 });
 
@@ -60,7 +60,7 @@ htmlElement.sendMessage.addEventListener('click', function(e) {
       pushdata.subject = htmlElement.subject.value;
       pushdata.message = htmlElement.message.value;
       clearData();
-      serverRequest('http://theillfree2019.openode.io/contact', pushdata);
+      serverRequest('https://theillfree2019.openode.io/contact', pushdata);
   }else{
     htmlElement.result.innerHTML = "Somevalues are missing or email format is not correct";
   }

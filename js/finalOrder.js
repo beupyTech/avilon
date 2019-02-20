@@ -77,5 +77,5 @@ htmlElementField.backBtn.addEventListener('click', function(e){
 htmlElementField.subBtn.addEventListener("click", function(e){
     e.preventDefault();
     htmlElementField.subBtn.disabled = true;
-    serverRequest('http://theillfree2019.openode.io/orders', orderSummary);
+    serverRequest('https://theillfree2019.openode.io/orders', orderSummary);
 })

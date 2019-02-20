@@ -125,7 +125,7 @@ function matchData(data){
         
 };
     
-    createServerGet('get', 'http://theillfree2019.openode.io/getProduct', function(res){
+    createServerGet('get', 'https://theillfree2019.openode.io/getProduct', function(res){
         let getBackData = JSON.parse(res);
         matchData(getBackData);
     });
