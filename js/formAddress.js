@@ -47,7 +47,7 @@ btnNext.addEventListener('click', function(e){
             state: htmlElementField.state.selectedIndex
         };
         console.log(orderSummary);
-        createFunction('./view/formPayment.html', contentForm, './js/formPayment.js');
+        createFunction('../view/formPayment.html', contentForm, '../js/formPayment.js');
     }else{
         alert('Missing Field');
     };

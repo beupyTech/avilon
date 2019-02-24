@@ -8,6 +8,14 @@ body {
   padding-top: 54px;
 }
 
+.onCard{
+    height: 350px;
+    overflow: hidden;
+}
+.oLink{
+    margin-top: 3%;
+}
+
 @media (min-width: 992px) {
   body {
     padding-top: 56px;

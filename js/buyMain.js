@@ -41,5 +41,5 @@ var scriptPut = function(src) {
 
 if(redirectToForum){
     redirectToForum = false;
-    createFunction("./view/formAddress.html",mainContainer,'./js/formAddress.js');
+    createFunction("../view/formAddress.html",mainContainer,'../js/formAddress.js');
 };

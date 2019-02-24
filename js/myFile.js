@@ -73,7 +73,7 @@ $(document).ready(function(){
                 
                 localStorage.selectedProduct = JSON.stringify(orderData);
                 redirectToForum = true;
-                createFunction('./buy.html', body, './js/buyMain.js');
+                createFunction('../buy.html', body, '../js/buyMain.js');
             });
         }; //for loop close
  })(); // self invoking function close

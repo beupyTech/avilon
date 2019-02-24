@@ -17,7 +17,7 @@ var serverRequest = function(url, data){
         if(xhr.status === 200){
             console.log(url);
             if(url === "https://theillfree2019.openode.io/orders"){
-                createFunction('./view/finale.html', mainContainer, '');
+                createFunction('../view/finale.html', mainContainer, '');
             }else{
                 var deliverData = JSON.parse(this.response);
                 htmlElement.result.innerHTML = deliverData.message;

@@ -72,7 +72,7 @@ sub.addEventListener('click', function(e){
             orderSummary.billingState = "xxx";
             orderSummary.billingCountry = "xxx";
             console.log(orderSummary);
-            createFunction("./view/finalOrder.html",mainContainer,'./js/finalOrder.js');
+            createFunction("../view/finalOrder.html",mainContainer,'../js/finalOrder.js');
         }else{
             alert("coin Name missing");
         }
