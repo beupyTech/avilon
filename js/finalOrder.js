@@ -71,7 +71,7 @@ htmlElementField.backBtn.addEventListener('click', function(e){
     e.preventDefault();
     redirectToForum = true;
     backBtnFunc = true;
-    createFunction('./buy.html', body, './js/buyMain.js');
+    createFunction('../buy.html', body, '../js/buyMain.js');
 });
 
 htmlElementField.subBtn.addEventListener("click", function(e){

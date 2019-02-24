@@ -5,7 +5,7 @@ btnNext.style.display = 'None';
 btnBack.addEventListener('click', function(e){
     e.preventDefault();
     backBtnFunc = true;
-    createFunction("./view/formAddress.html",mainContainer,'./js/formAddress.js');
+    createFunction("../view/formAddress.html",mainContainer,'../js/formAddress.js');
 });
 
 var htmlElementField = {
@@ -54,7 +54,7 @@ sub.addEventListener('click', function(e){
             orderSummary.billingCountry = htmlElementField.billingCountry.value;
             orderSummary.coinSelected = "xxx";
             console.log(orderSummary);
-            createFunction("./view/finalOrder.html",mainContainer,'./js/finalOrder.js');
+            createFunction("../view/finalOrder.html",mainContainer,'../js/finalOrder.js');
         }else{
             alert("Payment Type missing/ Value Missing");
         }
