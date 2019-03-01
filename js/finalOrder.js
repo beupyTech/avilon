@@ -27,7 +27,8 @@ var htmlElementField = {
     coinName:document.getElementById('dataCoinName'),
     backBtn:document.getElementById('btnBack'),
     nxtBtn:document.getElementById('btnNext'),
-    subBtn:document.getElementById('sub')
+    subBtn:document.getElementById('sub'),
+    payEmail: document.getElementById('datapaypalEmail')
 };
 
 (function(){
@@ -63,7 +64,7 @@ var htmlElementField = {
     htmlElementField.bState.innerHTML = orderSummary.billingState;
     htmlElementField.bCountry.innerHTML = orderSummary.billingCountry;
     htmlElementField.coinName.innerHTML = orderSummary.coinSelected
-    
+    htmlElementField.payEmail.innerHTML = orderSummary.paypalEmail;
     
 })();
 

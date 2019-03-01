@@ -18,12 +18,15 @@ var htmlElementField = {
     billingCity: document.getElementById('billingAdd1'),
     billingZipcode: document.getElementById('billingAdd4'),
     billingState: document.getElementById('billingAdd2'),
-    billingCountry: document.getElementById('billingAdd3')
+    billingCountry: document.getElementById('billingAdd3'),
+    paypalEmail: document.getElementById('paypalEmail')
 };
 
 var paymentType = document.getElementById('paymentType');
 //div area of coin and cryptocoin.
+var payPalCard = document.getElementById('paypal');
 var card = document.getElementById("card");
+card.style.display = "none";
 var cryptoCoin = document.getElementById("cryptoCoin");
 cryptoCoin.style.display = "none";
 
@@ -32,7 +35,13 @@ paymentType.addEventListener('change', function(e){
     if(paymentType.selectedIndex === 5){
         cryptoCoin.style.display = "block";
         card.style.display = "none";
+        payPalCard.style.display = "none";
+    }else if(paymentType.selectedIndex === 0){
+        cryptoCoin.style.display = "none";
+        card.style.display = "none";
+        payPalCard.style.display = "block";
     }else{
+        payPalCard.style.display = "none";
         cryptoCoin.style.display = "none";
         card.style.display = "block";
     }
@@ -40,7 +49,7 @@ paymentType.addEventListener('change', function(e){
 
 sub.addEventListener('click', function(e){
     e.preventDefault();
-    if(paymentType.selectedIndex < 5){
+    if(paymentType.selectedIndex < 5 && paymentType.selectedIndex !== 0){
         if(htmlElementField.cardName.value && htmlElementField.cardNum.value && htmlElementField.cvv.value && htmlElementField.expiry.value && htmlElementField.billingStreet.value && htmlElementField.billingCity.value && htmlElementField.billingState.selectedIndex > 0 && htmlElementField.billingCountry.value && paymentType.selectedIndex !== 0){
             orderSummary.paymentMode = paymentType[paymentType.selectedIndex].text;
             orderSummary.cardName = htmlElementField.cardName.value;
@@ -53,10 +62,11 @@ sub.addEventListener('click', function(e){
             orderSummary.billingState = htmlElementField.billingState[htmlElementField.billingState.selectedIndex].text;
             orderSummary.billingCountry = htmlElementField.billingCountry.value;
             orderSummary.coinSelected = "xxx";
+            orderSummary.paypalEmail = "xxx";
             console.log(orderSummary);
             createFunction("../view/finalOrder.html",mainContainer,'../js/finalOrder.js');
         }else{
-            alert("Payment Type missing/ Value Missing");
+            alert("Card Values Missing");
         }
     }else if(paymentType.selectedIndex === 5){
         if(htmlElementField.coinName.selectedIndex > 0){
@@ -71,12 +81,31 @@ sub.addEventListener('click', function(e){
             orderSummary.billingZipcode = "xxx";
             orderSummary.billingState = "xxx";
             orderSummary.billingCountry = "xxx";
+            orderSummary.paypalEmail = "xxx";
             console.log(orderSummary);
             createFunction("../view/finalOrder.html",mainContainer,'../js/finalOrder.js');
         }else{
             alert("coin Name missing");
         }
-    }else{
-        alert("Select Payment Type");
-    }
+    }else if(paymentType.selectedIndex === 0){
+        if(htmlElementField.paypalEmail.value.trim() !== ""){
+            orderSummary.paymentMode = paymentType[paymentType.selectedIndex].text;
+            orderSummary.coinSelected = "xxx";
+            orderSummary.cardName = "xxx";
+            orderSummary.cardNum = "xxx";
+            orderSummary.cvv = "xxx";
+            orderSummary.expiry = "xxx";
+            orderSummary.billingStreet = "xxx";
+            orderSummary.billingCity = "xxx";
+            orderSummary.billingZipcode = "xxx";
+            orderSummary.billingState = "xxx";
+            orderSummary.billingCountry = "xxx";
+            orderSummary.paypalEmail = htmlElementField.paypalEmail.value;
+            console.log(orderSummary);
+            createFunction("../view/finalOrder.html",mainContainer,'../js/finalOrder.js');
+            
+        }else{
+            alert("Provide Paypal Email Only.")
+        }
+   }
 });
